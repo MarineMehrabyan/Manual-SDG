@@ -8,6 +8,7 @@ This repository contains a Python implementation of a simple neural network trai
 
 ### 2. Initialization:
 - **Weights and Biases Initialization**: 
+ - **Weights Initialization**: 
   - ![equation](https://latex.codecogs.com/svg.latex?W_%7B%5Ctext%7Binput_hidden%7D%7D) is initialized with random values.
   - ![equation](https://latex.codecogs.com/svg.latex?b_%7B%5Ctext%7Bhidden%7D%7D) is initialized as a vector of zeros.
   - ![equation](https://latex.codecogs.com/svg.latex?W_%7B%5Ctext%7Bhidden_output%7D%7D) is initialized with random values.
