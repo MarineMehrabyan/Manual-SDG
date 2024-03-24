@@ -1,15 +1,17 @@
 # Manual-SDG
 This repository contains a Python implementation of a simple neural network trained using Stochastic Gradient Descent (SGD) from scratch. The neural network is built using NumPy and Pandas libraries, providing a foundational understanding of the underlying principles of neural networks and optimization algorithms.
+
+
 ### 1. Data Preprocessing:
 - **Normalization**: 
   - ![equation](https://latex.codecogs.com/svg.latex?X%20%3D%20%5Cfrac%7BX%20-%20%5Ctext%7Bmean%7D%28X%29%7D%7B%5Ctext%7Bstd%7D%28X%29%7D)
 
 ### 2. Initialization:
 - **Weights and Biases Initialization**: 
-  - \( W_{\text{input\_hidden}} \) is initialized with random values.
-  - \( b_{\text{hidden}} \) is initialized as a vector of zeros.
-  - \( W_{\text{hidden\_output}} \) is initialized with random values.
-  - \( b_{\text{output}} \) is initialized as a vector of zeros.
+  - ![equation](https://latex.codecogs.com/svg.latex?W_%7B%5Ctext%7Binput_hidden%7D%7D) is initialized with random values.
+  - ![equation](https://latex.codecogs.com/svg.latex?b_%7B%5Ctext%7Bhidden%7D%7D) is initialized as a vector of zeros.
+  - ![equation](https://latex.codecogs.com/svg.latex?W_%7B%5Ctext%7Bhidden_output%7D%7D) is initialized with random values.
+  - ![equation](https://latex.codecogs.com/svg.latex?b_%7B%5Ctext%7Boutput%7D%7D) is initialized as a vector of zeros.
 
 ### 3. Forward Pass:
 - **Input to Hidden Layer**:
@@ -34,9 +36,6 @@ This repository contains a Python implementation of a simple neural network trai
   - ![equation](https://latex.codecogs.com/svg.latex?%5Ctext%7Bhidden_error%7D%20%3D%20%5Ctext%7Boutput_error%7D%20%5Ccdot%20W_%7B%5Ctext%7Bhidden_output%7D%7D%5ET)
 - **Gradient Calculation for Input to Hidden Weights and Biases**:
   - ![equation](https://latex.codecogs.com/svg.latex?%5Cfrac%7B%5Cpartial%20%5Ctext%7BLoss%7D%7D%7B%5Cpartial%20W_%7B%5Ctext%7Binput_hidden%7D%7D%7D%7D%20%3D%20X%5ET%20%5Ccdot%20%5Ctext%7Bhidden_error%7D)
-  - ![equation](https://latex.codecogs.com/svg.latex?%5Cfrac%7B%5Cpartial%20%5Ctext%7BLoss%7D%7D%7B%5Cpartial%20b_%7B%5Ctext%7Bhidden%7D%7D%7D%7D%20%3D%20%5Csum%20%5Ctext%7Bhidden_error%7D)
+  - ![equation](https://latex.codecogs.com/svg.latex?%5Cfrac%7B%5Cpartial%20%5Ctext%7BLoss%7D%7D%7B%5Cpartial%20b_%7
 
-### 6. Update Parameters:
-- **Parameter Update using Gradient Descent**:
-  - ![equation](https://latex.codecogs.com/svg.latex?W_%7B%5Ctext%7Binput_hidden%7D%7D%20%3D%20W_%7B%5Ctext%7Binput_hidden%7D%7D%20-%20%5Ctext%7Blearning_rate%7D%20%5Ctimes%20%5Cfrac%7B%5Cpartial%20%5Ctext%7BLoss%7D%7D%7B%5Cpartial%20W_%7B%5Ctext%7Binput_hidden%7D%7D%7D%7D)
-  - ![equation](https://latex.codecogs.com/svg.latex?b_%7B%5Ctext%7Bhidden%7D%7D%20%3D%20b_%7B%5Ctext%7Bhidden%7D%7D%20-%20%5Ctext%7Blearning_rate%7D%20%5
+
