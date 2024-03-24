@@ -1,55 +1,42 @@
 # Manual-SDG
 This repository contains a Python implementation of a simple neural network trained using Stochastic Gradient Descent (SGD) from scratch. The neural network is built using NumPy and Pandas libraries, providing a foundational understanding of the underlying principles of neural networks and optimization algorithms.
-
 ### 1. Data Preprocessing:
 - **Normalization**: 
-  - \( X = \frac{{X - \text{{mean}}(X)}}{{\text{{std}}(X)}} \)
+  - ![equation](https://latex.codecogs.com/svg.latex?X%20%3D%20%5Cfrac%7BX%20-%20%5Ctext%7Bmean%7D%28X%29%7D%7B%5Ctext%7Bstd%7D%28X%29%7D)
 
 ### 2. Initialization:
 - **Weights and Biases Initialization**: 
-  - \( W_{\text{{input\_hidden}}} \) is initialized with random values.
-  - \( b_{\text{{hidden}}} \) is initialized as a vector of zeros.
-  - \( W_{\text{{hidden\_output}}} \) is initialized with random values.
-  - \( b_{\text{{output}}} \) is initialized as a vector of zeros.
+  - \( W_{\text{input\_hidden}} \) is initialized with random values.
+  - \( b_{\text{hidden}} \) is initialized as a vector of zeros.
+  - \( W_{\text{hidden\_output}} \) is initialized with random values.
+  - \( b_{\text{output}} \) is initialized as a vector of zeros.
 
 ### 3. Forward Pass:
 - **Input to Hidden Layer**:
-  - \( \text{{hidden\_output}} = X \cdot W_{\text{{input\_hidden}}} + b_{\text{{hidden}}} \)
+  - ![equation](https://latex.codecogs.com/svg.latex?%5Ctext%7Bhidden_output%7D%20%3D%20X%20%5Ccdot%20W_%7B%5Ctext%7Binput_hidden%7D%7D%20&plus;%20b_%7B%5Ctext%7Bhidden%7D%7D)
 - **Activation Function (ReLU)**:
-  - \( \text{{hidden\_activation}} = \text{{max}}(0, \text{{hidden\_output}}) \)
+  - ![equation](https://latex.codecogs.com/svg.latex?%5Ctext%7Bhidden_activation%7D%20%3D%20%5Ctext%7Bmax%7D%280%2C%20%5Ctext%7Bhidden_output%7D%29)
 - **Hidden to Output Layer**:
-  - \( \text{{output}} = \text{{hidden\_activation}} \cdot W_{\text{{hidden\_output}}} + b_{\text{{output}}} \)
+  - ![equation](https://latex.codecogs.com/svg.latex?%5Ctext%7Boutput%7D%20%3D%20%5Ctext%7Bhidden_activation%7D%20%5Ccdot%20W_%7B%5Ctext%7Bhidden_output%7D%7D%20&plus;%20b_%7B%5Ctext%7Boutput%7D%7D)
 
 ### 4. Loss Calculation:
 - **Mean Squared Error (MSE)**:
-  - \( \text{{Loss}} = \frac{1}{N} \sum_{i=1}^{N} (\text{{predictions}}_i - \text{{targets}}_i)^2 \)
+  - ![equation](https://latex.codecogs.com/svg.latex?%5Ctext%7BLoss%7D%20%3D%20%5Cfrac%7B1%7D%7BN%7D%20%5Csum_%7Bi%3D1%7D%5E%7BN%7D%20%28%5Ctext%7Bpredictions%7D_i%20-%20%5Ctext%7Btargets%7D_i%29%5E2)
 
 ### 5. Backpropagation:
 - **Output Layer Error**:
-  - \( \text{{output\_error}} = \frac{2}{N} (\text{{predictions}} - \text{{targets}}) \)
+  - ![equation](https://latex.codecogs.com/svg.latex?%5Ctext%7Boutput_error%7D%20%3D%20%5Cfrac%7B2%7D%7BN%7D%20%28%5Ctext%7Bpredictions%7D%20-%20%5Ctext%7Btargets%7D%29)
 - **Gradient Calculation for Hidden to Output Weights and Biases**:
-  - \( \frac{{\partial \text{{Loss}}}}{{\partial W_{\text{{hidden\_output}}}}} = \text{{hidden\_activation}}^T \cdot \text{{output\_error}} \)
-  - \( \frac{{\partial \text{{Loss}}}}{{\partial b_{\text{{output}}}}} = \sum \text{{output\_error}} \)
+  - ![equation](https://latex.codecogs.com/svg.latex?%5Cfrac%7B%5Cpartial%20%5Ctext%7BLoss%7D%7D%7B%5Cpartial%20W_%7B%5Ctext%7Bhidden_output%7D%7D%7D%7D%20%3D%20%5Ctext%7Bhidden_activation%7D%5ET%20%5Ccdot%20%5Ctext%7Boutput_error%7D)
+  - ![equation](https://latex.codecogs.com/svg.latex?%5Cfrac%7B%5Cpartial%20%5Ctext%7BLoss%7D%7D%7B%5Cpartial%20b_%7B%5Ctext%7Boutput%7D%7D%7D%7D%20%3D%20%5Csum%20%5Ctext%7Boutput_error%7D)
 
 - **Hidden Layer Error**:
-  - \( \text{{hidden\_error}} = \text{{output\_error}} \cdot W_{\text{{hidden\_output}}}^T \)
+  - ![equation](https://latex.codecogs.com/svg.latex?%5Ctext%7Bhidden_error%7D%20%3D%20%5Ctext%7Boutput_error%7D%20%5Ccdot%20W_%7B%5Ctext%7Bhidden_output%7D%7D%5ET)
 - **Gradient Calculation for Input to Hidden Weights and Biases**:
-  - \( \frac{{\partial \text{{Loss}}}}{{\partial W_{\text{{input\_hidden}}}}} = X^T \cdot \text{{hidden\_error}} \)
-  - \( \frac{{\partial \text{{Loss}}}}{{\partial b_{\text{{hidden}}}}} = \sum \text{{hidden\_error}} \)
+  - ![equation](https://latex.codecogs.com/svg.latex?%5Cfrac%7B%5Cpartial%20%5Ctext%7BLoss%7D%7D%7B%5Cpartial%20W_%7B%5Ctext%7Binput_hidden%7D%7D%7D%7D%20%3D%20X%5ET%20%5Ccdot%20%5Ctext%7Bhidden_error%7D)
+  - ![equation](https://latex.codecogs.com/svg.latex?%5Cfrac%7B%5Cpartial%20%5Ctext%7BLoss%7D%7D%7B%5Cpartial%20b_%7B%5Ctext%7Bhidden%7D%7D%7D%7D%20%3D%20%5Csum%20%5Ctext%7Bhidden_error%7D)
 
 ### 6. Update Parameters:
 - **Parameter Update using Gradient Descent**:
-  - \( W_{\text{{input\_hidden}}} = W_{\text{{input\_hidden}}} - \text{{learning\_rate}} \times \frac{{\partial \text{{Loss}}}}{{\partial W_{\text{{input\_hidden}}}}} \)
-  - \( b_{\text{{hidden}}} = b_{\text{{hidden}}} - \text{{learning\_rate}} \times \frac{{\partial \text{{Loss}}}}{{\partial b_{\text{{hidden}}}}} \)
-  - \( W_{\text{{hidden\_output}}} = W_{\text{{hidden\_output}}} - \text{{learning\_rate}} \times \frac{{\partial \text{{Loss}}}}{{\partial W_{\text{{hidden\_output}}}}} \)
-  - \( b_{\text{{output}}} = b_{\text{{output}}} - \text{{learning\_rate}} \times \frac{{\partial \text{{Loss}}}}{{\partial b_{\text{{output}}}}} \)
-
-### 7. Inference:
-- **Prediction**:
-  - \( \text{{predictions}} = \text{{forward\_pass}}(X) \)
-
-### 8. Evaluation:
-- **Root Mean Squared Error (RMSE)**:
-  - \( \text{{RMSE}} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (\text{{predictions}}_i - \text{{targets}}_i)^2} \)
-
-This mathematical representation helps us understand the code in terms of the underlying operations and computations performed at each step of the neural network training process.
+  - ![equation](https://latex.codecogs.com/svg.latex?W_%7B%5Ctext%7Binput_hidden%7D%7D%20%3D%20W_%7B%5Ctext%7Binput_hidden%7D%7D%20-%20%5Ctext%7Blearning_rate%7D%20%5Ctimes%20%5Cfrac%7B%5Cpartial%20%5Ctext%7BLoss%7D%7D%7B%5Cpartial%20W_%7B%5Ctext%7Binput_hidden%7D%7D%7D%7D)
+  - ![equation](https://latex.codecogs.com/svg.latex?b_%7B%5Ctext%7Bhidden%7D%7D%20%3D%20b_%7B%5Ctext%7Bhidden%7D%7D%20-%20%5Ctext%7Blearning_rate%7D%20%5
