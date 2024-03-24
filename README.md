@@ -36,6 +36,5 @@ This repository contains a Python implementation of a simple neural network trai
   - ![equation](https://latex.codecogs.com/svg.latex?%5Ctext%7Bhidden_error%7D%20%3D%20%5Ctext%7Boutput_error%7D%20%5Ccdot%20W_%7B%5Ctext%7Bhidden_output%7D%7D%5ET)
 - **Gradient Calculation for Input to Hidden Weights and Biases**:
   - ![equation](https://latex.codecogs.com/svg.latex?%5Cfrac%7B%5Cpartial%20%5Ctext%7BLoss%7D%7D%7B%5Cpartial%20W_%7B%5Ctext%7Binput_hidden%7D%7D%7D%7D%20%3D%20X%5ET%20%5Ccdot%20%5Ctext%7Bhidden_error%7D)
-  - ![equation](https://latex.codecogs.com/svg.latex?%5Cfrac%7B%5Cpartial%20%5Ctext%7BLoss%7D%7D%7B%5Cpartial%20b_%7
-
+  - ![equation](https://latex.codecogs.com/svg.latex?%5Cfrac%7B%5Cpartial%20%5Ctext%7BLoss%7D%7D%7B%5Cpartial%20b_%7B%5Ctext%7Bhidden%7D%7D%7D%7D%20%3D%20%5Csum%20%5Ctext%7Bhidden_error%7D)
 
