@@ -1,6 +1,7 @@
 # Manual-SDG
 This repository contains a Python implementation of a simple neural network trained using Stochastic Gradient Descent (SGD) from scratch. The neural network is built using NumPy and Pandas libraries, providing a foundational understanding of the underlying principles of neural networks and optimization algorithms.
 
+
 ## Mathematical Explanation
 
 ### 1. Data Preprocessing
@@ -63,4 +64,3 @@ This repository contains a Python implementation of a simple neural network trai
   - \( \text{{RMSE}} = \sqrt{\frac{1}{N} \sum_{i=1}^{N} (\text{{predictions}}_i - \text{{targets}}_i)^2} \)
 
 This mathematical representation helps us understand the code in terms of the underlying operations and computations performed at each step of the neural network training process.
-
